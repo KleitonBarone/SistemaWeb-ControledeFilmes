@@ -28,7 +28,7 @@ class FilmeController extends Controller
     public function create()
     {
         $generos = Genero::all();
-         $atores = Ator::all();
+         $ators = Ator::all();
         return view('filmes.create', compact('generos', 'ators'));
     }
 
@@ -71,7 +71,9 @@ class FilmeController extends Controller
      */
     public function edit(Filme $filme)
     {
-        return view('filmes.edit', compact('filme'));
+         $generos = Genero::all();
+         $ators = Ator::all();
+        return view('filmes.edit', compact('filme', 'generos', 'ators'));
     }
 
     /**

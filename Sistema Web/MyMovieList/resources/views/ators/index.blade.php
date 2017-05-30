@@ -45,11 +45,11 @@
                                     <td>{{$ator->nome}}</td>
                                     <td>{{$ator->ano}}</td>
                                     <td>
-                <a class="btn btn-primary" href="/atores/{{$ator->id}}/edit">
+                <a class="btn btn-primary" href="/ators/{{$ator->id}}/edit">
                                     Editar
                                 </a>
 
-                <form style="display: inline;" action="{{route('atores.destroy', $ator->id)}}" method="post">
+                <form style="display: inline;" action="{{route('ators.destroy', $ator->id)}}" method="post">
 
                     {{csrf_field()}}
 

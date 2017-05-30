@@ -64,7 +64,7 @@ class AtorController extends Controller
      */
     public function edit(Ator $ator)
     {
-        return view('atores.edit', compact('ator'));
+        return view('ators.edit', compact('ator'));
     }
 
     /**

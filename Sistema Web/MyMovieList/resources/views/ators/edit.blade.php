@@ -29,19 +29,19 @@
         <br />
         <hr>
 
-<form action="{{ route('atores.update', $atore->id) }}" method="post">
+<form action="{{ route('ators.update', $ator->id) }}" method="post">
                     {{csrf_field()}}
 
                     <input type="hidden" name="_method" value="put">
 
                     <div class="form-group">
                         <label for="nome">Nome</label>
-                        <input id="nome" class="form-control" type="text" name="nome" value="{{$atore->Nome}}">
+                        <input id="nome" class="form-control" type="text" name="nome" value="{{$ator->Nome}}">
 
                     </div>
                     <div class="form-group">
                         <label for="ano">Ano nascimento</label>
-                        <input id="ano" class="form-control" type="text" name="ano" value="{{$atore->Ano}}">
+                        <input id="ano" class="form-control" type="text" name="ano" value="{{$ator->Ano}}">
 
                     </div>
 
