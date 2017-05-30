@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Genero;
+use App\Ator;
 use Illuminate\Http\Request;
 
-class GeneroController extends Controller
+class AtorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,8 @@ class GeneroController extends Controller
      */
     public function index()
     {
-         $generos = Genero::all();
-
-        return view('generos.index', compact('generos'));
+        $ators = Ator::all();
+        return view('ators.index', compact('ators'));
     }
 
     /**
@@ -26,7 +25,7 @@ class GeneroController extends Controller
      */
     public function create()
     {
-        return view('generos.create');
+         return view('ators.create');
     }
 
     /**
@@ -37,21 +36,22 @@ class GeneroController extends Controller
      */
     public function store(Request $request)
     {
-       $genero = new Genero();
+       $ator = new Ator();
+
+        $ator->nome = $request->nome;
+        $ator->ano = $request->ano;
+        $ator->save();
         
-        $genero->nome = $request->nome;
-        $genero->save();
-        
-        return redirect('generos');
+        return redirect('/ators');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Genero  $genero
+     * @param  \App\Ator  $ator
      * @return \Illuminate\Http\Response
      */
-    public function show(Genero $genero)
+    public function show(Ator $ator)
     {
         //
     }
@@ -59,38 +59,38 @@ class GeneroController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Genero  $genero
+     * @param  \App\Ator  $ator
      * @return \Illuminate\Http\Response
      */
-    public function edit(Genero $genero)
+    public function edit(Ator $ator)
     {
-        return view('generos.edit', compact('genero'));
+        return view('atores.edit', compact('ator'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Genero  $genero
+     * @param  \App\Ator  $ator
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Genero $genero)
+    public function update(Request $request, Ator $ator)
     {
-        $genero->nome = $request->nome;
-
-        $genero->save();
-        return redirect('/generos');
+        $ator->nome = $request->nome;
+        $ator->ano = $request->ano;
+        $ator->save();
+        return redirect('/ators');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Genero  $genero
+     * @param  \App\Ator  $ator
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Genero $genero)
+    public function destroy(Ator $ator)
     {
-        $genero->delete();
-        return redirect('/generos');
+        $ator->delete();
+        return redirect('/ators');
     }
 }

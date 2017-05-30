@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Filme;
 use App\Genero;
+use App\Ator;
 use Illuminate\Http\Request;
 
 class FilmeController extends Controller
@@ -15,7 +16,7 @@ class FilmeController extends Controller
      */
     public function index()
     {
-        $filmes = Filme::with(['genero'])->get();
+        $filmes = Filme::with(['genero', 'ator'])->get();
         return view('filmes.index', compact('filmes'));
     }
 
@@ -27,7 +28,8 @@ class FilmeController extends Controller
     public function create()
     {
         $generos = Genero::all();
-        return view('filmes.create', compact('generos'));
+         $atores = Ator::all();
+        return view('filmes.create', compact('generos', 'ators'));
     }
 
     /**
@@ -43,6 +45,7 @@ class FilmeController extends Controller
         $filme->titulo = $request->titulo;
         $filme->ano = $request->ano;
         $filme->genero_id = $request->genero;
+         $filme->ator_id = $request->ator;
 
         $filme->save();
         
@@ -68,7 +71,7 @@ class FilmeController extends Controller
      */
     public function edit(Filme $filme)
     {
-        //
+        return view('filmes.edit', compact('filme'));
     }
 
     /**
@@ -80,7 +83,13 @@ class FilmeController extends Controller
      */
     public function update(Request $request, Filme $filme)
     {
-        //
+       $filme->titulo = $request->titulo;
+        $filme->ano = $request->ano;
+        $filme->genero_id = $request->genero;
+        $filme->ator_id = $request->ator;
+
+        $filme->save();
+        return redirect('/filmes');
     }
 
     /**
@@ -91,6 +100,7 @@ class FilmeController extends Controller
      */
     public function destroy(Filme $filme)
     {
-        //
+        $filme->delete();
+        return redirect('/filmes');
     }
 }

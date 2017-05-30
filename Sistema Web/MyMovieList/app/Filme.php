@@ -10,4 +10,9 @@ class Filme extends Model
     {
         return $this->belongsTo('App\Genero');
     }
+
+     public function ator()
+    {
+        return $this->belongsTo('App\Ator');
+    }
 }

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('titulo', 'Cadastro de Generos - MyMovieList')
+@section('titulo', 'Cadastro de Atores - MyMovieList')
 
 @section('content')
  <div class="container">
@@ -24,15 +24,22 @@
 <br>
 <div class="container grey lighten-4">
         <div class="container">
-        <h1 class="center">Cadastrar Generos</h1>
+        <h1 class="center">Cadastrar Filmes</h1>
         <br />
         <hr>
-        <form method="post" action="{{ route('generos.store') }}">
+        <form method="post" action="{{ route('ators.store') }}">
                     {{csrf_field()}}
                     <div class="form-group">
-                        <label for="nome">Nome do Genero</label>
+                        <label for="nome">Nome do Ator</label>
                         <input class="form-control" type="text" name="nome" id="nome" value="" required>
                     </div>
+
+                    <div class="form-group">
+                        <label for="ano">Ano de Nascimento</label>
+                        <input class="form-control" type="number" name="ano" id="ano" value="" required>
+                    </div>
+
+                
 
                     <button class="waves-effect waves-light blue btn" type="submit">Cadastrar</button>
 

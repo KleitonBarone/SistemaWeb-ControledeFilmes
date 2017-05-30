@@ -34,7 +34,7 @@
 
                 <ul id="nav-mobile" class="left">
                     <li><a href="{{ route('filmes.index') }}">Filmes</a></li>
-                    <li><a href="#">Atores</a></li>
+                    <li><a href="{{ route('ators.index') }}">Atores</a></li>
                     <li><a href="{{ route('generos.index') }}">Generos</a></li>
                     <li><a href="/sobre">Sobre</a></li>
                 </ul>

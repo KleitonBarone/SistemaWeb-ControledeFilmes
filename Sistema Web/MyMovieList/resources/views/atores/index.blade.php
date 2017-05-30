@@ -24,30 +24,32 @@
 <br>
 <div class="container grey lighten-4">
         <div class="container">
-        <h1 class="center">Generos</h1>
+        <h1 class="center">Atores</h1>
         <br />
-        <a href="{{ route('generos.create') }}" class="waves-effect waves-light blue btn">Cadastar Novo Genero</a>
+        <a href="{{ route('ators.create') }}" class="waves-effect waves-light blue btn">Cadastar Novo Ator</a>
         <hr>
         <table>
                             <thead>
                                 <tr>
                                     <th>Id</th>
-                                    <th>Genero</th>
+                                    <th>Ator</th>
+                                    <th>Ano de Nascimento</th>
                                     <th></th>
                                 </tr>
                             </thead>
-<!-- será adicionado mais tarde a pagina de cada genero, com filmes relacionados ao mesmo -->
+<!-- será adicionado mais tarde a pagina de cada filme, com filmes relacionados ao mesmo -->
                             <tbody>
-                            @forelse ($generos as $genero)
+                            @forelse ($ators as $ator)
                                 <tr>
-                                    <td>{{$genero->id}}</td>
-                                    <td>{{$genero->nome}}</td>
+                                    <td>{{$ator->id}}</td>
+                                    <td>{{$ator->nome}}</td>
+                                    <td>{{$ator->ano}}</td>
                                     <td>
-                <a class="btn btn-primary" href="/generos/{{$genero->id}}/edit">
+                <a class="btn btn-primary" href="/atores/{{$ator->id}}/edit">
                                     Editar
                                 </a>
 
-                <form style="display: inline;" action="{{route('generos.destroy', $genero->id)}}" method="post">
+                <form style="display: inline;" action="{{route('atores.destroy', $ator->id)}}" method="post">
 
                     {{csrf_field()}}
 

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('titulo', 'Cadastro de Filmes - MyMovieList')
+@section('titulo', 'Editar Filme - MyMovieList')
 
 @section('content')
  <div class="container">
@@ -9,7 +9,7 @@
             <div class="nav-wrapper blue darken-2">
 
                 <ul id="nav-mobile" class="left">
-                    <li><a href="{{ route('filmes.index') }}">Filmes</a></li>
+                   <li><a href="{{ route('filmes.index') }}">Filmes</a></li>
                     <li><a href="{{ route('ators.index') }}">Atores</a></li>
                     <li><a href="{{ route('generos.index') }}">Generos</a></li>
                     <li><a href="/sobre">Sobre</a></li>
@@ -22,24 +22,28 @@
 <br>
 <br>
 <br>
+
 <div class="container grey lighten-4">
         <div class="container">
-        <h1 class="center">Cadastrar Filmes</h1>
+        <h1 class="center">Editar Filme</h1>
         <br />
         <hr>
-        <!-- mais tarde vai poder ser selecionado mais de um genero e mais de um ator -->
-        <form method="post" action="{{ route('filmes.store') }}">
+
+<form action="{{ route('filmes.update', $filme->id) }}" method="post">
                     {{csrf_field()}}
-                    <div class="form-group">
+
+                    <input type="hidden" name="_method" value="put">
+
+                   <div class="form-group">
                         <label for="titulo">Titulo</label>
-                        <input id="titulo" class="form-control" type="text" name="titulo" placeholder="Titulo" required>
+                        <input id="titulo" class="form-control" type="text" name="titulo" placeholder="Titulo"  value="{{$filme->Titulo}}" required>
 
                     </div>
                    
 
                     <div class="form-group">
                         <label for="ano">Ano de Lançamento</label>
-                        <input id="ano" class="form-control" type="number" name="ano" placeholder="Ano" required>
+                        <input id="ano" class="form-control" type="text" name="ano" placeholder="Ano" value="{{$filme->Ano}}" required>
 
                     </div>
 
@@ -67,22 +71,17 @@
                         
                         </select>
                     </div>
-
-                    <button class="waves-effect waves-light blue btn" type="submit">Cadastrar</button>
-
+                   
+                    <button type="submit" class="btn btn-primary">Enviar</button>
                 </form>
 
-
-</div>
-</div>
+         </div>
+         <br>
 <br>
 <br>
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
+    </div>
+    <br>
 <br>
 <br>
 <br>
