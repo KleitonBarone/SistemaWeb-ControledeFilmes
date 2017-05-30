@@ -14,3 +14,16 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+
+Route::resource('generos', 'GeneroController');
+
+Route::resource('filmes', 'FilmeController');
+
+Route::get('/sobre', function () {
+    return view('sobre');
+});
+
