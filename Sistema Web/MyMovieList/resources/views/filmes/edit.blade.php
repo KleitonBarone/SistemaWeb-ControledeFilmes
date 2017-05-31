@@ -36,14 +36,14 @@
 
                    <div class="form-group">
                         <label for="titulo">Titulo</label>
-                        <input id="titulo" class="form-control" type="text" name="titulo" placeholder="Titulo"  value="{{$filme->Titulo}}" required>
+                        <input id="titulo" class="form-control" type="text" name="titulo" placeholder="Titulo"  value="{{$filme->titulo}}" required>
 
                     </div>
                    
 
                     <div class="form-group">
                         <label for="ano">Ano de Lançamento</label>
-                        <input id="ano" class="form-control" type="text" name="ano" placeholder="Ano" value="{{$filme->Ano}}" required>
+                        <input id="ano" class="form-control" type="number" name="ano" placeholder="Ano" value="{{$filme->ano}}" required>
 
                     </div>
 

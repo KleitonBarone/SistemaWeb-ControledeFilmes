@@ -36,7 +36,7 @@
 
                     <div class="form-group">
                         <label for="nome">Nome</label>
-                        <input id="nome" class="form-control" type="text" name="nome" value="{{$genero->Nome}}">
+                        <input id="nome" class="form-control" type="text" name="nome" value="{{$genero->nome}}">
 
                     </div>
 
