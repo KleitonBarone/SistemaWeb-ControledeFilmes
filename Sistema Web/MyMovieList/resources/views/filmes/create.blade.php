@@ -3,21 +3,7 @@
 @section('titulo', 'Cadastro de Filmes - MyMovieList')
 
 @section('content')
- <div class="container">
-
-        <nav>
-            <div class="nav-wrapper blue darken-2">
-
-                <ul id="nav-mobile" class="left">
-                    <li><a href="{{ route('filmes.index') }}">Filmes</a></li>
-                    <li><a href="{{ route('ators.index') }}">Atores</a></li>
-                    <li><a href="{{ route('generos.index') }}">Generos</a></li>
-                    <li><a href="/sobre">Sobre</a></li>
-                </ul>
-            </div>
-            
-        </nav>
-</div>
+ 
 <br>
 <br>
 <br>
@@ -27,7 +13,7 @@
         <h1 class="center">Cadastrar Filmes</h1>
         <br />
         <hr>
-        <!-- mais tarde vai poder ser selecionado mais de um genero e mais de um ator -->
+        
         <form method="post" action="{{ route('filmes.store') }}">
                     {{csrf_field()}}
                     <div class="form-group">

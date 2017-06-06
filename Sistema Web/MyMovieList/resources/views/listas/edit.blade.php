@@ -11,18 +11,18 @@
 
 <div class="container grey lighten-4">
         <div class="container">
-        <h1 class="center">Editar Genero</h1>
+        <h1 class="center">Editar Lista de Reprodução</h1>
         <br />
         <hr>
 
-<form action="{{ route('generos.update', $genero->id) }}" method="post">
+<form action="{{ route('listas.update', $lista->id) }}" method="post">
                     {{csrf_field()}}
 
                     <input type="hidden" name="_method" value="put">
 
                     <div class="form-group">
                         <label for="nome">Nome</label>
-                        <input id="nome" class="form-control" type="text" name="nome" value="{{$genero->nome}}">
+                        <input id="nome" class="form-control" type="text" name="nome" value="{{$lista->nome}}">
 
                     </div>
 

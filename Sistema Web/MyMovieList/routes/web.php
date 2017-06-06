@@ -27,6 +27,11 @@ Route::resource('filmes', 'FilmeController');
 
 Route::resource('ators', 'AtorController');
 
+Route::resource('listas', 'ListaController');
+
+Route::post('listas/{lista}', ['uses' => 'ListaController@addfilme',
+'as' => 'listas.addfilme']);
+
 });
 
 Route::get('/sobre', function () {

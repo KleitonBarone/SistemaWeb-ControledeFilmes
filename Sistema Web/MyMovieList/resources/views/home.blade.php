@@ -3,21 +3,7 @@
 @section('titulo'. 'Inicio - MyMovieList')
 
 @section('content')
-    <div class="container">
-
-        <nav>
-            <div class="nav-wrapper blue darken-2">
-
-                <ul id="nav-mobile" class="left">
-                    <li><a href="{{ route('filmes.index') }}">Filmes</a></li>
-                    <li><a href="{{ route('ators.index') }}">Atores</a></li>
-                    <li><a href="{{ route('generos.index') }}">Generos</a></li>
-                    <li><a href="/sobre">Sobre</a></li>
-                </ul>
-            </div>
-            
-        </nav>
-</div>
+    
     
 
     <div class="container grey lighten-4">
