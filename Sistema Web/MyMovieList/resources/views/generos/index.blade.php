@@ -3,18 +3,17 @@
 @section('titulo', 'Generos - MyMovieList')
 
 @section('content')
-
-<br>
-<br>
-<br>
-<br>
-<div class="container grey lighten-4">
+<div class="container z-depth-5">
         <div class="container">
+        <br>
         <h1 class="center">Generos</h1>
-        <br />
+        <br>
         <a href="{{ route('generos.create') }}" class="waves-effect waves-light blue btn">Cadastar Novo Genero</a>
-        <hr>
-        <table>
+        <br>
+        <br>
+        <div class="divider"> </div>
+        @if ( count($generos) > 0 )
+        <table class="highlight">
                             <thead>
                                 <tr>
                                     <th>Id</th>
@@ -22,9 +21,8 @@
                                     <th></th>
                                 </tr>
                             </thead>
-<!-- será adicionado mais tarde a pagina de cada genero, com filmes relacionados ao mesmo -->
                             <tbody>
-                            @forelse ($generos as $genero)
+                                @foreach ($generos as $genero)
                                 <tr>
                                     <td>{{$genero->id}}</td>
                                     <td>{{$genero->nome}}</td>
@@ -39,30 +37,36 @@
 
                     <input type="hidden" name="_method" value="delete">
 
-                    <button class="btn btn-danger">Apagar</button>
+                    <button class="btn red">Apagar</button>
 
                 </form>
 
             </td>
                                 </tr>
-                             @empty
-                                <tr><td>Sem resultados</td></tr>
-                             @endforelse
+                            @endforeach
                                 
                             </tbody>
                         </table>
+                        @else
+                                <br>
+                                <div class="center">
+                                <br>
+                                <h5>Sem resultados, Cadastre um Genero!<h5>
+                                <br>
+                                </div>
+                        @endif
 
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 </div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 @endsection

@@ -3,60 +3,42 @@
 @section('titulo', 'Editar Ator - MyMovieList')
 
 @section('content')
- <div class="container">
-
-        <nav>
-            <div class="nav-wrapper blue darken-2">
-
-                <ul id="nav-mobile" class="left">
-                   <li><a href="{{ route('filmes.index') }}">Filmes</a></li>
-                    <li><a href="{{ route('ators.index') }}">Atores</a></li>
-                    <li><a href="{{ route('generos.index') }}">Generos</a></li>
-                    <li><a href="/sobre">Sobre</a></li>
-                </ul>
-            </div>
-            
-        </nav>
-</div>
-<br>
-<br>
-<br>
-<br>
-
-<div class="container grey lighten-4">
+<div class="container z-depth-5">
         <div class="container">
+        <br>
         <h1 class="center">Editar Ator</h1>
-        <br />
-        <hr>
-
-<form action="{{ route('ators.update', $ator->id) }}" method="post">
+        <br>
+        <div class="divider"></div>
+        <br>
+        <form action="{{ route('ators.update', $ator->id) }}" method="post">
                     {{csrf_field()}}
 
                     <input type="hidden" name="_method" value="put">
 
-                    <div class="form-group">
+                    <div class="input-field">
+                        <input id="nome" class="validate" type="text" name="nome" value="{{$ator->nome}}" required autofocus>
                         <label for="nome">Nome</label>
-                        <input id="nome" class="form-control" type="text" name="nome" value="{{$ator->nome}}">
-
-                    </div>
-                    <div class="form-group">
-                        <label for="ano">Ano nascimento</label>
-                        <input id="ano" class="form-control" type="text" name="ano" value="{{$ator->ano}}">
-
                     </div>
 
-                   
-                    <button type="submit" class="btn btn-primary">Enviar</button>
+                    <div class="input-field">
+                        <input id="ano" class="validate" type="number" name="ano" value="{{$ator->ano}}" required>
+                        <label for="ano">Ano de Nascimento</label>
+                    </div>
+
+                    <br>
+                    <br>
+                    <div class="center">
+                    <button type="submit" class="waves-effect waves-light blue btn">Editar</button>
+                    </div>
                 </form>
 
          </div>
          <br>
+         <br>
 <br>
 <br>
 <br>
-    </div>
-    <br>
 <br>
 <br>
-<br>
+</div>
 @endsection

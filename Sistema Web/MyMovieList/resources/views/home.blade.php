@@ -3,15 +3,12 @@
 @section('titulo'. 'Inicio - MyMovieList')
 
 @section('content')
-    
-    
-
-    <div class="container grey lighten-4">
+    <div class="container z-depth-5">
         <div class="container">
     <div class="row">
         <div class="col s12">
             <h5>Sugestão de Filmes</h5>
-            <hr>
+            <div class="divider"> </div>
         </div>
     </div>
 <!-- SERÁ ADICIONADO UM SISTEMA DINAMICO MAIS TARDE NO PROJETO -->
@@ -39,7 +36,7 @@
     <div class="row">
         <div class="col s12">
             <h5>Filmes Lançados Recentemente</h5>
-            <hr>
+            <div class="divider"></div>
         </div>
     </div>
     <div class="row">
@@ -67,7 +64,7 @@
     <div class="row">
         <div class="col s12">
             <h5>Trailer de Novos Filmes</h5>
-            <hr>
+            <div class="divider"> </div>
         </div>
     </div>
     <div class="row">
@@ -92,5 +89,6 @@
                    
     </div>
 </div>
+<br>
     </div>
 @endsection

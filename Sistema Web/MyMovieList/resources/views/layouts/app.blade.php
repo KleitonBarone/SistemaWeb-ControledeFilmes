@@ -11,7 +11,7 @@
     <title>@yield('titulo')</title>
 
     
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
    
     <script>
@@ -23,10 +23,10 @@
 <body>
 <nav>
    <div class="nav-wrapper white">
-        <div class="row">
-            <div class="col s3 offset-s1">
-      <a href="/" class="brand-logo blue-text">MyMovieList</a>
-      </div>
+   <div class="row">
+         <div class="col s3 offset-s1">
+            <a href="/home" class="brand-logo blue-text">MyMovieList</a>
+         </div>
       <ul id="nav-mobile" class="right">
 
 @if (Auth::guest())
@@ -58,7 +58,7 @@
       </div>
     </div> 
 </nav>
- <div class="container">
+
 
         <nav>
             <div class="nav-wrapper blue darken-2">
@@ -73,7 +73,7 @@
             </div>
             
         </nav>
-</div>
+
                     
 
         @yield('content')
@@ -83,14 +83,19 @@
           <div class="footer-copyright blue darken-2">
             <div class="container">
             © 2017 MyMovieList.  Todos os Direitos Reservados.
-            <a class="grey-text text-lighten-4 right" href="/">Inicio</a>
+            <a class="grey-text text-lighten-4 right" href="/home">Início</a>
             </div>
           </div>
-        </footer>
+    </footer>
 
   
     <script src="{{ asset('js/app.js') }}"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function() {
+    $('select').material_select();
+        });
+    </script>
 </body>
 </html>

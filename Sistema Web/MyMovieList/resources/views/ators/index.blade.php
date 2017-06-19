@@ -3,32 +3,18 @@
 @section('titulo', 'Generos - MyMovieList')
 
 @section('content')
- <div class="container">
-
-        <nav>
-            <div class="nav-wrapper blue darken-2">
-
-                <ul id="nav-mobile" class="left">
-                  <li><a href="{{ route('filmes.index') }}">Filmes</a></li>
-                    <li><a href="{{ route('ators.index') }}">Atores</a></li>
-                    <li><a href="{{ route('generos.index') }}">Generos</a></li>
-                    <li><a href="/sobre">Sobre</a></li>
-                </ul>
-            </div>
-            
-        </nav>
-</div>
-<br>
-<br>
-<br>
-<br>
-<div class="container grey lighten-4">
+<div class="container z-depth-5">
         <div class="container">
+        <br>
         <h1 class="center">Atores</h1>
-        <br />
+        <br>
         <a href="{{ route('ators.create') }}" class="waves-effect waves-light blue btn">Cadastar Novo Ator</a>
-        <hr>
-        <table>
+        <br>
+        <br>
+        <div class="divider"> </div>
+        <br>
+         @if ( count($ators) > 0 )
+        <table class="highlight">
                             <thead>
                                 <tr>
                                     <th>Id</th>
@@ -37,9 +23,8 @@
                                     <th></th>
                                 </tr>
                             </thead>
-<!-- será adicionado mais tarde a pagina de cada filme, com filmes relacionados ao mesmo -->
                             <tbody>
-                            @forelse ($ators as $ator)
+                                    @foreach ($ators as $ator)
                                 <tr>
                                     <td>{{$ator->id}}</td>
                                     <td>{{$ator->nome}}</td>
@@ -55,30 +40,35 @@
 
                     <input type="hidden" name="_method" value="delete">
 
-                    <button class="btn btn-danger">Apagar</button>
+                    <button class="btn red">Apagar</button>
 
                 </form>
 
             </td>
                                 </tr>
-                             @empty
-                                <tr><td>Sem resultados</td></tr>
-                             @endforelse
-                                
+                             @endforeach
                             </tbody>
                         </table>
+                                @else
+                                <br>
+                                <div class="center">
+                                    <h5>Sem Resultados, Cadastre um Ator!</h5>
+                                </div>
+                                <br>
+                                @endif
+                    
 
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 </div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 @endsection

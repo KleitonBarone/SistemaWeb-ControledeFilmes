@@ -6,6 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Filme extends Model
 {
+
+    protected $fillable = [
+        'titulo', 'ano',
+    ];
+
    public function genero()
     {
         return $this->belongsTo('App\Genero');
@@ -18,6 +23,7 @@ class Filme extends Model
 
     public function lista()
     {
-        return $this->belongsToMany('App\Lista');
+        return $this->belongsToMany('App\Lista')
+      ->withTimestamps();
     }
 }

@@ -29,8 +29,11 @@ Route::resource('ators', 'AtorController');
 
 Route::resource('listas', 'ListaController');
 
-Route::post('listas/{lista}', ['uses' => 'ListaController@addfilme',
-'as' => 'listas.addfilme']);
+Route::post('listas/{lista}', ['uses' => 'FilmeLista@addfilme',
+'as'=> 'listas.addfilme']);
+
+Route::post('listas/{lista}/delete', ['uses' => 'FilmeLista@deletefilme',
+'as'=> 'listas.deletefilme']);
 
 });
 

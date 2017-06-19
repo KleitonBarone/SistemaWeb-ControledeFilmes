@@ -17,7 +17,7 @@ class ListaController extends Controller
      */
     public function index()
     {
-        $listas = DB::select('select * from listas where user_id = ?', [Auth::user()->id]);
+        $listas = Lista::all();
         $filmes = Filme::all();
         return view('listas.index', compact('listas','filmes'));
     }
@@ -60,6 +60,7 @@ class ListaController extends Controller
     public function show(Lista $lista)
     {
         $filmes = Filme::all();
+        
         return view('listas.show', compact('lista', 'filmes'));
     }
 
@@ -102,10 +103,4 @@ class ListaController extends Controller
         return redirect('/listas');
     }
 
-    public function addfilme(Request $request, $lista)
-    {
-            $lista = Lista::find($lista);
-            $lista->filme()->attach($request->filme_id);
-            return redirect()->route('listas.show', array($lista));
-    }
 }

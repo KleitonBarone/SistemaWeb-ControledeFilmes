@@ -3,39 +3,37 @@
 @section('titulo', 'Cadastro de Generos - MyMovieList')
 
 @section('content')
- 
-<br>
-<br>
-<br>
-<br>
-<div class="container grey lighten-4">
+<div class="container  z-depth-5">
         <div class="container">
+        <br>
         <h1 class="center">Cadastrar Generos</h1>
-        <br />
-        <hr>
+        <br>
+        <div class="divider"></div>
+        <br>
         <form method="post" action="{{ route('generos.store') }}">
                     {{csrf_field()}}
-                    <div class="form-group">
+                    <div class="input-field">
+                        <input class="validate" type="text" name="nome" id="nome" required autofocus>
                         <label for="nome">Nome do Genero</label>
-                        <input class="form-control" type="text" name="nome" id="nome" value="" required>
                     </div>
-
+                    <br>
+                    <div class="center">
                     <button class="waves-effect waves-light blue btn" type="submit">Cadastrar</button>
-
-                </form>
+                    </div>
+        </form>
 
 
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 </div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 @endsection

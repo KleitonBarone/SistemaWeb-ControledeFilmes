@@ -11,23 +11,21 @@
 </head>
 
 <body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-
     <nav>
         <div class="nav-wrapper white">
             <div class="row">
                 <div class="col s3 offset-s1">
-                    <a href="/" class="brand-logo blue-text">MyMovieList</a>
+                    
+                    <a href="/home" class="brand-logo"><img src="MyMovieList.png" alt="Logo-MyMovieList" width="200" height="50"></a>
                 </div>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <ul id="nav-mobile" class="right">
                     <li><a href="/login" class="waves-effect waves-light blue btn">Login</a></li>
                     <li> <a href="/register" class="waves-effect waves-light blue btn">Cadastro</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <div class="container">
+    
 
         <nav>
             <div class="nav-wrapper blue darken-2">
@@ -36,20 +34,21 @@
                     <li><a href="{{ route('filmes.index') }}">Filmes</a></li>
                     <li><a href="{{ route('ators.index') }}">Atores</a></li>
                     <li><a href="{{ route('generos.index') }}">Generos</a></li>
+                    <li><a href="{{ route('listas.index') }}">Listas de Rerodução</a></li>
                     <li><a href="/sobre">Sobre</a></li>
                 </ul>
             </div>
 
         </nav>
-    </div>
+    
 
 
-    <div class="container grey lighten-4">
+    <div class="container  z-depth-5">
         <div class="container">
             <div class="row">
                 <div class="col s12">
                     <h5>Sugestão de Filmes</h5>
-                    <hr>
+                    <div class="divider"> </div>
                 </div>
             </div>
             <!-- SERÁ ADICIONADO UM SISTEMA DINAMICO MAIS TARDE NO PROJETO -->
@@ -77,7 +76,7 @@
             <div class="row">
                 <div class="col s12">
                     <h5>Filmes Lançados Recentemente</h5>
-                    <hr>
+                    <div class="divider"> </div>
                 </div>
             </div>
             <div class="row">
@@ -105,7 +104,7 @@
             <div class="row">
                 <div class="col s12">
                     <h5>Trailer de Novos Filmes</h5>
-                    <hr>
+                    <div class="divider"> </div>
                 </div>
             </div>
             <div class="row">
@@ -129,7 +128,7 @@
             </div>
         </div>
 
-
+<br>
     </div>
 
 
@@ -138,11 +137,12 @@
         <div class="footer-copyright blue darken-2">
             <div class="container">
                 © 2017 MyMovieList. Todos os Direitos Reservados.
-                <a class="grey-text text-lighten-4 right" href="/">Inicio</a>
+                <a class="grey-text text-lighten-4 right" href="/home">Início</a>
             </div>
         </div>
     </footer>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 </body>
 
 </html>

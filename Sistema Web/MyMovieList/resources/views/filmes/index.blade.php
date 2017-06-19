@@ -3,19 +3,18 @@
 @section('titulo', 'Filmes - MyMovieList')
 
 @section('content')
- 
-<br>
-<br>
-<br>
-<br>
-<div class="container grey lighten-4">
+<div class="container z-depth-5">
         <div class="container">
+        <br>
         <h1 class="center">Filmes</h1>
-        <br />
-        <a href="{{ route('filmes.create') }}" class="waves-effect waves-light blue btn">Cadastar Novo Filmes</a>
-        <!-- mais tarde será adicionado a pagina de cada filme, com mais detalhes sobre o mesmo. -->
-        <hr>
-        <table>
+        <br>
+        <a href="{{ route('filmes.create') }}" class="waves-effect waves-light blue btn">Cadastar Novo Filme</a>
+        <br>
+        <br>
+        <br>
+        <div class="divider"> </div>
+        @if ( count($filmes) > 0 )
+        <table class="highlight">
                             <thead>
                                 <tr>
                                     <th>Id</th>
@@ -25,10 +24,9 @@
                                     <th>Ator</th>
                                     <th></th>
                                 </tr>
-                            </thead>
-
+                            </thead> 
                             <tbody>
-                            @forelse ($filmes as $filme)
+                                @foreach ($filmes as $filme)
                                 <tr>
                                     <td>{{$filme->id}}</td>
                                     <td>{{$filme->titulo}}</td>
@@ -46,30 +44,36 @@
 
                     <input type="hidden" name="_method" value="delete">
 
-                    <button class="btn btn-danger">Apagar</button>
+                    <button class="btn red">Apagar</button>
 
                 </form>
 
             </td>
                                 </tr>
-                             @empty
-                                <tr><td>Sem resultados</td></tr>
-                             @endforelse
-                                
+                                @endforeach
                             </tbody>
                         </table>
+                       @else
+                        <br>
+                            <div class="center">
+                                
+                            <h5>Sem resultados, Cadastre um Filme!</h5>
+                            </div>
+                            <br>
+                        @endif
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 </div>
 </div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
 @endsection

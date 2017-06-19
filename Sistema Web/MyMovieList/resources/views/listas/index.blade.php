@@ -3,54 +3,68 @@
 @section('titulo', 'Generos - MyMovieList')
 
 @section('content')
-
-<br>
-<br>
-<br>
-<br>
-<div class="container grey lighten-4">
+<div class="container  z-depth-5">
         <div class="container">
+        <br>
         <h1 class="center">Listas de Reprodução</h1>
-        <br />
+        <br>
         <a href="{{ route('listas.create') }}" class="waves-effect waves-light blue btn">Criar Nova Lista</a>
-        <hr>
-      
+        <br>
+        <br>
+        <div class="divider"> </div>
         @forelse ($listas as $lista)
-<form action="{{route('listas.show', $lista->id)}}" method="">
- {{csrf_field()}}
- <button class="waves-effect waves-light blue btn" type="submit">{{$lista->nome}}</button>
-</form>
-        <h5><a class="btn btn-primary" href="/listas/{{$lista->id}}/edit">
-                                    Editar Nome
-                                </a>
-                                <form style="display: inline;" action="{{route('listas.destroy', $lista->id)}}" method="post">
+        
+        <table>
+        <tr>
+        <td>
+        <form action="{{route('listas.show', $lista->id)}}" method="">
+        {{csrf_field()}}
+        <button class="waves-effect waves-light blue btn" type="submit">{{$lista->nome}}</button>
+        </form>
+        </td>
 
-                    {{csrf_field()}}
+        <td>
+                <a class="btn btn-primary" href="/listas/{{$lista->id}}/edit">
+                        Editar
+                </a>
+        </td>
 
-                    <input type="hidden" name="_method" value="delete">
+        <td>
+                <form style="display: inline;" action="{{route('listas.destroy', $lista->id)}}" method="post">
 
-                    <button class="btn btn-danger">Apagar Lista</button>
+                        {{csrf_field()}}
+
+                        <input type="hidden" name="_method" value="delete">
+
+                        <button class="btn red">Apagar Lista</button>
 
                 </form>
-        </h5>
+        </td>
+        </tr>
+        </table>
 
-<hr>
+        <div class="divider"></div>
                     
- @empty
-<h3>Sem Resultados</h3>
- @endforelse
-
+        @empty
+        <div class="center">
+        <br>
+        <h5>Sem Resultados, Crie uma Lista!</h5>
+        <br>
+        </div>
+        @endforelse
+<br>
+<br>
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 </div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 @endsection

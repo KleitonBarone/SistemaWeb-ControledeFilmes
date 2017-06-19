@@ -3,60 +3,44 @@
 @section('titulo', 'Cadastro de Atores - MyMovieList')
 
 @section('content')
- <div class="container">
-
-        <nav>
-            <div class="nav-wrapper blue darken-2">
-
-                <ul id="nav-mobile" class="left">
-                   <li><a href="{{ route('filmes.index') }}">Filmes</a></li>
-                    <li><a href="{{ route('ators.index') }}">Atores</a></li>
-                    <li><a href="{{ route('generos.index') }}">Generos</a></li>
-                    <li><a href="/sobre">Sobre</a></li>
-                </ul>
-            </div>
-            
-        </nav>
-</div>
-<br>
-<br>
-<br>
-<br>
-<div class="container grey lighten-4">
+<div class="container  z-depth-5">
         <div class="container">
-        <h1 class="center">Cadastrar Filmes</h1>
-        <br />
-        <hr>
+        <br>
+        <h1 class="center">Cadastrar Atores</h1>
+        <br>
+        <div class="divider"></div>
+        <br>
         <form method="post" action="{{ route('ators.store') }}">
                     {{csrf_field()}}
-                    <div class="form-group">
+                    <div class="input-field">
+                        
+                        <input class="validate" type="text" name="nome" id="nome" value="" required autofocus>
                         <label for="nome">Nome do Ator</label>
-                        <input class="form-control" type="text" name="nome" id="nome" value="" required>
                     </div>
 
-                    <div class="form-group">
+                    <div class="input-field">
+                        
+                        <input class="validate" type="number" name="ano" id="ano" value="" required>
                         <label for="ano">Ano de Nascimento</label>
-                        <input class="form-control" type="number" name="ano" id="ano" value="" required>
                     </div>
 
                 
-
+                    <div class="center">
+                    <br>
                     <button class="waves-effect waves-light blue btn" type="submit">Cadastrar</button>
-
+                    </div>
                 </form>
 
 
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 </div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
 @endsection
