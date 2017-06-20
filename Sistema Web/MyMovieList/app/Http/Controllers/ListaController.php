@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Lista;
 use App\Filme;
+use App\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -19,7 +20,8 @@ class ListaController extends Controller
     {
         $listas = Lista::all();
         $filmes = Filme::all();
-        return view('listas.index', compact('listas','filmes'));
+        $users = User::all();
+        return view('listas.index', compact('listas','filmes', 'users'));
     }
 
     /**
@@ -60,8 +62,8 @@ class ListaController extends Controller
     public function show(Lista $lista)
     {
         $filmes = Filme::all();
-        
-        return view('listas.show', compact('lista', 'filmes'));
+        $users = User::all();
+        return view('listas.show', compact('lista', 'filmes', 'users'));
     }
 
     /**
@@ -103,4 +105,16 @@ class ListaController extends Controller
         return redirect('/listas');
     }
 
+        public function procuralista(Request $request)
+    {
+        
+        $user_id = $request->user;
+        $listas = DB::table('listas')
+            ->select(DB::raw("*"))
+            ->where('user_id', '=', $user_id)
+            ->get();
+        $filmes = Filme::all();
+        $users = User::all();
+        return view('listas.index', compact('listas','filmes', 'users'));
+    }
 }

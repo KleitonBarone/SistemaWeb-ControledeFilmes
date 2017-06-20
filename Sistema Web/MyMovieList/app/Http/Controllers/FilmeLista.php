@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Lista;
 use App\Filme;
+use Illuminate\Support\Facades\DB;
 
 class FilmeLista extends Controller
 {
@@ -23,4 +24,6 @@ class FilmeLista extends Controller
         $lista->filme()->detach($filme);
             return redirect()->route('listas.show', compact('lista'));
     }
+
+
 }

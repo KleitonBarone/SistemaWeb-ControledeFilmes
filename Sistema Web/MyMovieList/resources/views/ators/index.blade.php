@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('titulo', 'Generos - MyMovieList')
+@section('titulo', 'Ators - MyMovieList')
 
 @section('content')
 <div class="container z-depth-5">

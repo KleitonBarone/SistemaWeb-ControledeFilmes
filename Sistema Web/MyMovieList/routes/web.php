@@ -35,6 +35,18 @@ Route::post('listas/{lista}', ['uses' => 'FilmeLista@addfilme',
 Route::post('listas/{lista}/delete', ['uses' => 'FilmeLista@deletefilme',
 'as'=> 'listas.deletefilme']);
 
+Route::get('search/listas', ['uses' => 'ListaController@procuralista',
+'as'=> 'listas.procuralista']);
+
+Route::get('listas/{lista}/avalia', ['uses' => 'UserLista@showavalia',
+'as'=> 'avalia.show']);
+
+Route::post('listas/{lista}/avaliaadd', ['uses' => 'UserLista@addavalia',
+'as'=> 'avalia.addavalia']);
+
+Route::post('listas/{lista}/avaliamuda', ['uses' => 'UserLista@mudaavalia',
+'as'=> 'avalia.mudaavalia']);
+
 });
 
 Route::get('/sobre', function () {

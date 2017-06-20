@@ -1,12 +1,21 @@
 @extends('layouts.app')
 
-@section('titulo', 'Generos - MyMovieList')
+@section('titulo', 'Mostrar Listas - MyMovieList')
 
 @section('content')
 <div class="container z-depth-5">
         <div class="container">
         <br>
         <h1 class="center">{{$lista->nome}}</h1>
+        <?php
+          foreach ($users as $user){
+            if($user->id == $lista->user_id){
+                $criador = $user->name;
+                break;
+            };
+          };
+        ?>
+        <h5>Criado por: {{$criador}}
         <br>
         <div class="divider"></div>
         @if( count($lista->filme) > 0)

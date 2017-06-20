@@ -16,4 +16,11 @@ class Lista extends Model
         return $this->belongsToMany('App\Filme')
       ->withTimestamps();
     }
+
+    public function user()
+    {
+        return $this->belongsToMany('App\User')
+        ->withPivot('nota')
+      ->withTimestamps();
+    }
 }

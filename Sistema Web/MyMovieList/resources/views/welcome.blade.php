@@ -16,7 +16,7 @@
             <div class="row">
                 <div class="col s3 offset-s1">
                     
-                    <a href="/home" class="brand-logo"><img src="MyMovieList.png" alt="Logo-MyMovieList" width="200" height="50"></a>
+                    <a href="/home" class="brand-logo blue-text">MyMovieList</a>
                 </div>
                 <ul id="nav-mobile" class="right">
                     <li><a href="/login" class="waves-effect waves-light blue btn">Login</a></li>

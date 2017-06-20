@@ -26,4 +26,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+        public function lista()
+    {
+        return $this->belongsToMany('App\Lista')
+        ->withPivot('nota')
+      ->withTimestamps();
+    }
+
 }
