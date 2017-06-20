@@ -9,8 +9,111 @@
         <h1 class="center">{{$lista->nome}}</h1>
         <br>
         <div class="divider"></div>
+        <?php
+                         $hit = 0;
+                         $user_id = Auth::user()->name ;
+                        ?>
+                         @foreach ($lista->user as $user)
+
+                         @if ($user->id == $user->id)
+                         <?php
+                             $hit = 1;
+                         ?>
+                         @endif
+                         @endforeach
+
+                         @if($hit == 0)
+                         <div class="input-field inline">
+                        
+                        <div class="row">
+                        <div class="col s12">
+                        <form action="{{route('avalia.addavalia', $lista->id)}}" method="post" style="display: inline;">
+                        {{csrf_field()}}
+                        <h5 class="">Avalie a Lista:</h5>
+                        <input type="hidden" value="1" name="nota" id="nota">
+                        <button type="submit" border=0><i class="material-icons">grade</i></button>
+                        
+                        </form>
+                        <form action="{{route('avalia.addavalia', $lista->id)}}" method="post" style="display: inline;">
+                        {{csrf_field()}}
+                        
+                        <input type="hidden" value="2" name="nota" id="nota">
+                        <button type="submit"><i class="material-icons">grade</i></button>
+                        
+                        </form>
+                        <form action="{{route('avalia.addavalia', $lista->id)}}" method="post" style="display: inline;">
+                        {{csrf_field()}}
+                        
+                        <input type="hidden" value="3" name="nota" id="nota">
+                        <button type="submit"><i class="material-icons">grade</i></button>
+                        
+                        </form>
+                        <form action="{{route('avalia.addavalia', $lista->id)}}" method="post" style="display: inline;">
+                        {{csrf_field()}}
+                        
+                        <input type="hidden" value="4" name="nota" id="nota">
+                        <button type="submit"><i class="material-icons">grade</i></button>
+                        
+                        </form>
+                        <form action="{{route('avalia.addavalia', $lista->id)}}" method="post" style="display: inline;">
+                        {{csrf_field()}}
+                        
+                        <input type="hidden" value="5" name="nota" id="nota">
+                        <button type="submit"><i class="material-icons">grade</i></button>
+                        
+                        </form>
+                        <strong>Estrelas</strong>
+                        </div>
+                        </div>
+                        </div>
+                        @else
+                        
+                        <div class="input-field inline">
+                        <div class="row">
+                        <form action="{{route('avalia.mudaavalia', $lista->id)}}" method="post" style="display: inline;">
+                        {{csrf_field()}}
+                        <strong>Mude sua Nota:</strong>
+                        <input type="hidden" value="1" name="nota" id="nota">
+                        <button type="submit"  class="waves-effect waves-teal btn-flat" ><i class="material-icons">grade</i></button>
+                        
+                        </form>
+                        <form action="{{route('avalia.mudaavalia', $lista->id)}}" method="post" style="display: inline;">
+                        {{csrf_field()}}
+                        
+                        <input type="hidden" value="2" name="nota" id="nota">
+                        <button type="submit" class="waves-effect waves-teal btn-flat"><i class="material-icons">grade</i></button>
+                        
+                        </form>
+                        <form action="{{route('avalia.mudaavalia', $lista->id)}}" method="post" style="display: inline;">
+                        {{csrf_field()}}
+                        
+                        <input type="hidden" value="3" name="nota" id="nota">
+                        <button type="submit" class="waves-effect waves-teal btn-flat"><i class="material-icons">grade</i></button>
+                        
+                        </form>
+                        <form action="{{route('avalia.mudaavalia', $lista->id)}}" method="post" style="display: inline;">
+                        {{csrf_field()}}
+                        
+                        <input type="hidden" value="4" name="nota" id="nota">
+                        <button type="submit" class="waves-effect waves-teal btn-flat"><i class="material-icons">grade</i></button>
+                        
+                        </form>
+                        <form action="{{route('avalia.mudaavalia', $lista->id)}}" method="post" style="display: inline;">
+                        {{csrf_field()}}
+                        
+                        <input type="hidden" value="5" name="nota" id="nota">
+                        <button type="submit" class="waves-effect waves-teal btn-flat"><i class="material-icons">grade</i></button>
+                        
+                        </form>
+                        <strong>Estrelas</strong>
+                        </div>
+                        </div>
+                        @endif 
+        <div class="divider"></div>
+        <br>
+        <br>
         @if( count($lista->user) > 0)
-        <h5>Nota Media:
+        <h5>Media de Notas da Lista:
         <?php 
         $nota_total = 0;
         $numero_notas = 0;
@@ -20,8 +123,9 @@
         };
         $media = $nota_total / $numero_notas;
         ?> 
-        <strong>{{$media}}</strong>
+        <strong>{{$media}} Estrelas</strong>
         </h5>
+                              
         <table class="highlight">
                             <thead>
                                 <tr>
@@ -53,68 +157,9 @@
                                 </div>
                         @endif
                         <br>
-                        <div class="divider"></div>
+                        
                         <br>
-                        <?php
-                         $hit = 0;
-                         $user_id = Auth::user()->name ;
-                        ?>
-                         @foreach ($lista->user as $user)
-
-                         @if ($user->id == $user->id)
-                         <?php
-                             $hit = 1;
-                         ?>
-                         @endif
-                         @endforeach
-
-                         @if($hit == 0)
-                        <h5>Avalie a Lista:</h5>
-                        <form action="{{route('avalia.addavalia', $lista->id)}}" method="post" style="display: inline;">
-
-                        {{csrf_field()}}
-                        
-                            <div class="input-field">
-                                <select name="nota" id="nota" required>
-                        
-                                <option value="1">Nota 1</option>
-                                <option value="2">Nota 2</option>
-                                <option value="3">Nota 3</option>
-                                <option value="4">Nota 4</option>
-                                <option value="5" selected>Nota 5</option>
-                            
-                                </select>
-                                <label for="genero">Nota</label>
-                            </div>
-
-                        <div class="center">
-                        <button class="waves-effect waves-light blue btn" type="submit">Avalie</button>
-                        </div>            
-                        </form>
-                        @else
-                        <h5>Mude sua Nota:</h5>
-                        <form action="{{route('avalia.mudaavalia', $lista->id)}}" method="post" style="display: inline;">
-
-                        {{csrf_field()}}
-                        
-                            <div class="input-field">
-                                <select name="nota" id="nota" required>
-                        
-                                <option value="1">Nota 1</option>
-                                <option value="2">Nota 2</option>
-                                <option value="3">Nota 3</option>
-                                <option value="4">Nota 4</option>
-                                <option value="5" selected>Nota 5</option>
-                            
-                                </select>
-                                <label for="genero">Nota</label>
-                            </div>
-
-                        <div class="center">
-                        <button class="waves-effect waves-light blue btn" type="submit">Mudar!</button>
-                        </div>            
-                        </form>
-                        @endif
+     
                     
 
 </div>

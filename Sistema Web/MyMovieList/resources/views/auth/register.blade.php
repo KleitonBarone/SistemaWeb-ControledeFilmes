@@ -68,7 +68,7 @@
                             
 
                             <div class="input-field col s12">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                                <input id="password-confirm" type="password" class="validate" name="password_confirmation" required>
                                 <label for="password-confirm">Confirmar Senha</label>
                             </div>
                         </div>
