@@ -15,7 +15,7 @@
             };
           };
         ?>
-        <h5>Criado por: {{$criador}}
+        <h5>Criado por: {{$criador}}</h5>
         <br>
         <div class="divider"></div>
         @if( count($lista->filme) > 0)
@@ -57,7 +57,7 @@
                         <br>
                                 <div class="center">
                                 <br>
-                                <h5>Sem resultados, Adicione um Filme!<h5>
+                                <h5>Sem resultados, Adicione um Filme!</h5>
                                 <br>
                                 </div>
                         @endif

@@ -29,6 +29,7 @@ Route::resource('ators', 'AtorController');
 
 Route::resource('listas', 'ListaController');
 
+//sistema de listas
 Route::post('listas/{lista}', ['uses' => 'FilmeLista@addfilme',
 'as'=> 'listas.addfilme']);
 
@@ -38,6 +39,7 @@ Route::post('listas/{lista}/delete', ['uses' => 'FilmeLista@deletefilme',
 Route::get('search/listas', ['uses' => 'ListaController@procuralista',
 'as'=> 'listas.procuralista']);
 
+//sistema de avaliação
 Route::get('listas/{lista}/avalia', ['uses' => 'UserLista@showavalia',
 'as'=> 'avalia.show']);
 
@@ -49,7 +51,5 @@ Route::post('listas/{lista}/avaliamuda', ['uses' => 'UserLista@mudaavalia',
 
 });
 
-Route::get('/sobre', function () {
-    return view('sobre');
-});
+
 

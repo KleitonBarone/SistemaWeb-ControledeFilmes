@@ -32,7 +32,7 @@
                     <br>
                     @else
                     <div class="input-field">
-                        <select name="genero" id="genero" required>
+                        <select  name="genero" id="genero" required>
                         
                             
                             @foreach($generos as $genero)
@@ -66,7 +66,6 @@
                         <label for="ator">Ator</label> 
                     </div>
                     @endif
-
                     @if( ( count($ators) < 1 ) || ( count($generos) < 1 ) )
                     <div class="center">
                     <button class="btn disabled">Cadastrar</button>

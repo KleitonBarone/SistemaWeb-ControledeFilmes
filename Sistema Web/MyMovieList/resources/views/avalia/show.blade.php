@@ -27,41 +27,16 @@
                         
                         <div class="row">
                         <div class="col s12">
-                        <form action="{{route('avalia.addavalia', $lista->id)}}" method="post" style="display: inline;">
-                        {{csrf_field()}}
-                        <h5 class="">Avalie a Lista:</h5>
-                        <input type="hidden" value="1" name="nota" id="nota">
-                        <button type="submit" border=0><i class="material-icons">grade</i></button>
-                        
-                        </form>
+                        <strong>Avalie a Lista:</strong>
+                        @for($i=1; $i<=5; $i++)
                         <form action="{{route('avalia.addavalia', $lista->id)}}" method="post" style="display: inline;">
                         {{csrf_field()}}
                         
-                        <input type="hidden" value="2" name="nota" id="nota">
-                        <button type="submit"><i class="material-icons">grade</i></button>
+                        <input type="hidden" value="{{$i}}" name="nota" id="nota">
+                        <button type="submit" class="waves-effect waves-teal btn-flat"><i class="material-icons">grade</i></button>
                         
                         </form>
-                        <form action="{{route('avalia.addavalia', $lista->id)}}" method="post" style="display: inline;">
-                        {{csrf_field()}}
-                        
-                        <input type="hidden" value="3" name="nota" id="nota">
-                        <button type="submit"><i class="material-icons">grade</i></button>
-                        
-                        </form>
-                        <form action="{{route('avalia.addavalia', $lista->id)}}" method="post" style="display: inline;">
-                        {{csrf_field()}}
-                        
-                        <input type="hidden" value="4" name="nota" id="nota">
-                        <button type="submit"><i class="material-icons">grade</i></button>
-                        
-                        </form>
-                        <form action="{{route('avalia.addavalia', $lista->id)}}" method="post" style="display: inline;">
-                        {{csrf_field()}}
-                        
-                        <input type="hidden" value="5" name="nota" id="nota">
-                        <button type="submit"><i class="material-icons">grade</i></button>
-                        
-                        </form>
+                        @endfor
                         <strong>Estrelas</strong>
                         </div>
                         </div>
@@ -70,41 +45,16 @@
                         
                         <div class="input-field inline">
                         <div class="row">
+                            <strong>Mude sua Nota:</strong>
+                        @for($i=1; $i<=5; $i++)
                         <form action="{{route('avalia.mudaavalia', $lista->id)}}" method="post" style="display: inline;">
                         {{csrf_field()}}
-                        <strong>Mude sua Nota:</strong>
-                        <input type="hidden" value="1" name="nota" id="nota">
+                        
+                        <input type="hidden" value="{{$i}}" name="nota" id="nota">
                         <button type="submit"  class="waves-effect waves-teal btn-flat" ><i class="material-icons">grade</i></button>
                         
                         </form>
-                        <form action="{{route('avalia.mudaavalia', $lista->id)}}" method="post" style="display: inline;">
-                        {{csrf_field()}}
-                        
-                        <input type="hidden" value="2" name="nota" id="nota">
-                        <button type="submit" class="waves-effect waves-teal btn-flat"><i class="material-icons">grade</i></button>
-                        
-                        </form>
-                        <form action="{{route('avalia.mudaavalia', $lista->id)}}" method="post" style="display: inline;">
-                        {{csrf_field()}}
-                        
-                        <input type="hidden" value="3" name="nota" id="nota">
-                        <button type="submit" class="waves-effect waves-teal btn-flat"><i class="material-icons">grade</i></button>
-                        
-                        </form>
-                        <form action="{{route('avalia.mudaavalia', $lista->id)}}" method="post" style="display: inline;">
-                        {{csrf_field()}}
-                        
-                        <input type="hidden" value="4" name="nota" id="nota">
-                        <button type="submit" class="waves-effect waves-teal btn-flat"><i class="material-icons">grade</i></button>
-                        
-                        </form>
-                        <form action="{{route('avalia.mudaavalia', $lista->id)}}" method="post" style="display: inline;">
-                        {{csrf_field()}}
-                        
-                        <input type="hidden" value="5" name="nota" id="nota">
-                        <button type="submit" class="waves-effect waves-teal btn-flat"><i class="material-icons">grade</i></button>
-                        
-                        </form>
+                        @endfor
                         <strong>Estrelas</strong>
                         </div>
                         </div>
@@ -142,7 +92,7 @@
                                 <tr>
                                     <td>{{$user->id}}</td>
                                     <td>{{$user->name}}</td>
-                                    <td>{{$user->pivot->nota}}</td>
+                                    <td>{{$user->pivot->nota}} Estrelas</td>
                                     
                                 </tr>
                              @endforeach

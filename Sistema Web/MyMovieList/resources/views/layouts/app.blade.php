@@ -67,8 +67,8 @@
                   <li><a href="{{ route('filmes.index') }}">Filmes</a></li>
                     <li><a href="{{ route('ators.index') }}">Atores</a></li>
                     <li><a href="{{ route('generos.index') }}">Generos</a></li>
-                    <li><a href="{{ route('listas.index') }}">Listas de Rerodução</a></li>
-                    <li><a href="/sobre">Sobre</a></li>
+                    <li><a href="{{ route('listas.index') }}">Listas de Reprodução</a></li>
+                    
                 </ul>
             </div>
             

@@ -53,9 +53,12 @@
         <p>Criado por: <strong>{{$criador}}</strong></p>
         </td>
         <td>
+        Nome da Lista: <strong>{{$lista->nome}}</strong>
+        </td>
+        <td>
         <form action="{{route('listas.show', $lista->id)}}" method="">
         {{csrf_field()}}
-        <button class="waves-effect waves-light blue btn" type="submit">{{$lista->nome}}</button>
+        <button class="waves-effect waves-light blue btn" type="submit">Visualizar</button>
         </form>
         </td>
 
