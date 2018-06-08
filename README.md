@@ -1,7 +1,7 @@
 # Sistema Web de Controle de Filmes
 Um sistema web desenvolvido por Kleiton Barone e Luan Siqueira, como atividade em sala de aula para maior aprendizado do framework Laravel.
 
-__ Caso queira testar o sistema, crie um BD no sql com nome de "mymovielist" e depois de o comando de migração do laravel - "php artisan migrate" para depois testa-lo __
+__Caso queira testar o sistema, crie um BD no sql com nome de "mymovielist" e depois de o comando de migração do laravel - "php artisan migrate" para depois testa-lo__
 
 ## Objetivos Concluidos
 * Aprendido a maioria das funcionalidades basicas do Laravel
